@@ -8,6 +8,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
+import java.util.ArrayList;
+
 import static com.github.automatedowl.tools.AllureEnvironmentWriter.allureEnvironmentWriter;
 
 public class TestBase {
@@ -44,6 +46,11 @@ public class TestBase {
     @AfterClass
     public void tearDown(){
         driver.quit();
+    }
+
+    public void switchTab(){
+        ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
     }
 
 }

@@ -5,7 +5,6 @@ import org.junit.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class ReservationTest extends TestBase {
 
@@ -23,8 +22,7 @@ public class ReservationTest extends TestBase {
         homePage.clickCheckOut();
         homePage.clickSearch();
         searchResultPage.clickHotel();
-        ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(1));
+        switchTab();
         hotelPage.clickBed();
         hotelPage.selectAmount();
         hotelPage.clickIWillReserve();
