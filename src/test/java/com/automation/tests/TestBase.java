@@ -25,7 +25,7 @@ public class TestBase {
         allureEnvironmentWriter(
                 ImmutableMap.<String, String>builder()
                         .put("Browser", "Chrome")
-                        .put("Browser.Version", "87.0.4280.88")
+                        .put("Browser.Version", "97.0.4692.71")
                         .put("URL", url)
                         .build(), System.getProperty("user.dir")
                         + "/allure-results/");
