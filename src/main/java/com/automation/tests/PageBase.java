@@ -7,8 +7,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
-
 public class PageBase {
 
     WebDriver driver;
@@ -49,14 +47,6 @@ public class PageBase {
 
     public String getContent(By locator){
         return action(locator).getText();
-    }
-
-    public void smartWait(List locator) throws InterruptedException {
-        int count = 0;
-        while (locator.size() <= 0 && count < 40) {
-            Thread.sleep(700);
-            count++;
-        }
     }
 
 }

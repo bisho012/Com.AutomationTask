@@ -1,12 +1,17 @@
 package com.automation.tests;
 
 import Utils.ExcelFileManager;
+import org.junit.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class ReservationTest extends TestBase {
+
+    String expectedHotelTitle = "Tolip Hotel Alexandria";
+    String expectedCheckOut = "Thu, Apr 14, 2022";
+    String expectedCheckIn = "Fri, Apr 1, 2022";
 
     @Test
     public void Reserve() throws IOException, InterruptedException {
@@ -16,8 +21,6 @@ public class ReservationTest extends TestBase {
         homePage.clickNextPage();
         homePage.clickCheckIn();
         homePage.clickCheckOut();
-        // homePage.setTxtCheckIn(ExcelFileManager.setDataFromExcelFile(2,1));
-        // homePage.setTxtCheckOut(ExcelFileManager.setDataFromExcelFile(3,1));
         homePage.clickSearch();
         searchResultPage.clickHotel();
         ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
@@ -25,8 +28,9 @@ public class ReservationTest extends TestBase {
         hotelPage.clickBed();
         hotelPage.selectAmount();
         hotelPage.clickIWillReserve();
-        bookingDetailsPage.assertHotelTitle();
-        bookingDetailsPage.assertCheckIn();
-        bookingDetailsPage.assertCheckOut();
+        Assert.assertEquals(expectedHotelTitle,bookingDetailsPage.getHotelName());
+        Assert.assertEquals(expectedCheckIn,bookingDetailsPage.getCheckIn());
+        Assert.assertEquals(expectedCheckOut,bookingDetailsPage.getCheckOut());
+
     }
 }

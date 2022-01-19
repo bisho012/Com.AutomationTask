@@ -21,12 +21,6 @@ public class HomePage extends PageBase {
     public void setTxtDestination(String destination){
         setText(txtDestination, destination);
     }
-    public void setTxtCheckIn(String checkin){
-        setText(txtDestination, checkin);
-    }
-    public void setTxtCheckOut(String checkOut){
-        setText(txtDestination, checkOut);
-    }
     public void clickCheckInOut(){
         click(btnCheckInOut);
     }
