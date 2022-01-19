@@ -1,5 +1,6 @@
 package com.automation.tests;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -17,7 +18,7 @@ public class HomePage extends PageBase {
     private By btnCheckIn = By.xpath("//td[@data-date='2022-04-01']");
     private By btnCheckOut = By.xpath("//td[@data-date='2022-04-14']");
 
-
+    @Step("Enter Destination: Alexandria")
     public void setTxtDestination(String destination){
         setText(txtDestination, destination);
     }

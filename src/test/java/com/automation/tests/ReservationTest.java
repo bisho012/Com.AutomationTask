@@ -1,6 +1,8 @@
 package com.automation.tests;
 
 import Utils.ExcelFileManager;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.Assert;
 import org.testng.annotations.Test;
 
@@ -13,6 +15,7 @@ public class ReservationTest extends TestBase {
     String expectedCheckIn = "Fri, Apr 1, 2022";
 
     @Test
+    @Severity(SeverityLevel.NORMAL)
     public void Reserve() throws IOException, InterruptedException {
         homePage.setTxtDestination(ExcelFileManager.setDataFromExcelFile(0, 1));
         homePage.clickCheckInOut();
