@@ -20,7 +20,6 @@ public class ReservationTest extends TestBase {
         homePage.setTxtDestination(ExcelFileManager.setDataFromExcelFile(0, 1));
         homePage.clickCheckInOut();
         homePage.clickNextPage();
-        homePage.clickNextPage();
         homePage.clickCheckIn();
         homePage.clickCheckOut();
         homePage.clickSearch();
